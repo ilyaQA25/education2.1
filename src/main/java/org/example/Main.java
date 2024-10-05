@@ -6,19 +6,10 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int month = 5;
+        Phone phone = new Phone();
+        //System.out.println(phone.reciveCall("Slavic"));
+        System.out.println(phone.reciveCall("pdiddy", 234232));
 
 
-        Seasons seasons = Seasons.fromMonth(month);
-
-        if(seasons == Seasons.WINTER){
-            System.out.println("Winter");
-        } else if (seasons == Seasons.FALL) {
-            System.out.println("Fall");
-        } else if (seasons ==Seasons.SPRING) {
-            System.out.println("spring");
-        } else if (seasons ==Seasons.SUMMER) {
-            System.out.println("summer");
-        }
     }
     }
