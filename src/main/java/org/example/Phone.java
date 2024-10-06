@@ -1,6 +1,6 @@
 package org.example;
 
-public class Phone {
+public class Phone implements CodeSender{
     Integer number;
     Integer weight;
     String model;
@@ -32,16 +32,27 @@ public class Phone {
         return model;
     }
 
-    public void setNumber(Integer number) {
+    public int setNumber(Integer number) {
         this.number = number;
+        return 0;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String setName(String name) {
+        this.name = name;
+        return name;
     }
 
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
 
-    public void setModel(String model) {
+    public String setModel(String model) {
         this.model = model;
+        return model;
     }
 
 
@@ -52,4 +63,18 @@ public class Phone {
         return  name+ " is calling. his number is: "+number;
     }
 
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "number=" + number +
+                ", weight=" + weight +
+                ", model='" + model + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public void send(Integer code) {
+        System.out.println(code+" is sended to number: " + number);
+    }
 }
