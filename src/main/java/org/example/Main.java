@@ -6,14 +6,13 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Phone phone = new Phone();
-        phone.setNumber(34534345);
-        //System.out.println(phone.reciveCall("Slavic"));
-        System.out.println(phone.reciveCall(phone.setName("werner"),phone.getNumber() ));
+        NegativeNumberExeption negativeNumberExeption = new NegativeNumberExeption();
 
-        System.out.println(phone.model);
-
-        phone.send(7788);
+        try {
+            negativeNumberExeption.negativeResultMethod(25,5);
+        }catch (NegativeNumberExeption negativeNumberExeption1){
+            System.out.println("one of the numbers is negative");
+        }
 
     }
     }
