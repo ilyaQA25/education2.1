@@ -1,29 +1,18 @@
 package org.example.hw7;
 
-import java.util.Date;
-
-public class GoodsShipping {
-    private Integer documentId;
+public class GoodsShipping extends Documents {
     private String goodsType;
     private Integer amountOfGoods;
-    private Date dateOfDocument;
 
-    public GoodsShipping(Integer documentId, String goodsType, Integer amountOfGoods, Date dateOfDocument) {
-        this.documentId = documentId;
-        this.goodsType = goodsType;
+    public GoodsShipping(Integer documentId, String dateOfDocument, String goodsType, Integer amountOfGoods) {
+        super(documentId, dateOfDocument);
         this.amountOfGoods = amountOfGoods;
-        this.dateOfDocument = dateOfDocument;
+        this.goodsType = goodsType;
+
     }
 
-    public GoodsShipping() {
-    }
-
-    public Integer getDocumentId() {
-        return documentId;
-    }
-
-    public void setDocumentId(Integer documentId) {
-        this.documentId = documentId;
+    public GoodsShipping(Integer documentId, String dateOfDocument) {
+        super(documentId, dateOfDocument);
     }
 
     public String getGoodsType() {
@@ -42,22 +31,17 @@ public class GoodsShipping {
         this.amountOfGoods = amountOfGoods;
     }
 
-    public Date getDateOfDocument() {
-        return dateOfDocument;
-    }
-
-    public void setDateOfDocument(Date dateOfDocument) {
-        this.dateOfDocument = dateOfDocument;
+    @Override
+    public String toString() {
+        return "GoodsShipping{" + "goodsType='" + goodsType + '\'' + ", amountOfGoods=" + amountOfGoods + '}';
     }
 
     @Override
-    public String toString() {
-        return "GoodsShipping{" +
-                "documentId=" + documentId +
-                ", goodsType='" + goodsType + '\'' +
-                ", amountOfGoods=" + amountOfGoods +
-                ", dateOfDocument=" + dateOfDocument +
-                '}';
+    public void showInfo() {
+        System.out.println("GoodsShipping: goodsType= " + goodsType + ", amountOfGoods=" + amountOfGoods + ", docId= " + getDocumentId() + ", dateOfDoc= " + getDateOfDocument());
+        super.showInfo();
     }
-
+/* public void showInfo(){
+        System.out.println("GoodsShipping: goodsType= "+goodsType + ", amountOfGoods="+ amountOfGoods + ", docId= " + getDocumentId()+", dateOfDoc= "+getDateOfDocument() );
+    }*/
 }

@@ -2,61 +2,23 @@ package org.example.hw7;
 
 import java.util.Date;
 
-public class FinanceDocument {
+public class FinanceDocument extends Documents {
     private Double finalAmount;
-    private Date dateOfDocument;
-    private Integer documentId;
     private Integer departmentId;
 
-    public FinanceDocument(Double finalAmount, Date dateOfDocument, Integer documentId, Integer departmentId) {
-        this.finalAmount = finalAmount;
-        this.dateOfDocument = dateOfDocument;
-        this.documentId = documentId;
+    public FinanceDocument(Integer documentId, String dateOfDocument, Double finalAmount, Integer departmentId) {
+        super(documentId, dateOfDocument);
         this.departmentId = departmentId;
-    }
-
-    public Double getFinalAmount() {
-        return finalAmount;
-    }
-
-    public void setFinalAmount(Double finalAmount) {
         this.finalAmount = finalAmount;
     }
 
-    public Date getDateOfDocument() {
-        return dateOfDocument;
-    }
-
-    public void setDateOfDocument(Date dateOfDocument) {
-        this.dateOfDocument = dateOfDocument;
-    }
-
-    public Integer getDocumentId() {
-        return documentId;
-    }
-
-    public void setDocumentId(Integer documentId) {
-        this.documentId = documentId;
-    }
-
-    public Integer getDepartmentId() {
-        return departmentId;
-    }
-
-    public void setDepartmentId(Integer departmentId) {
-        this.departmentId = departmentId;
+    public FinanceDocument(Integer documentId, String dateOfDocument) {
+        super(documentId, dateOfDocument);
     }
 
     @Override
-    public String toString() {
-        return "FinanceDocument{" +
-                "finalAmount=" + finalAmount +
-                ", dateOfDocument=" + dateOfDocument +
-                ", documentId=" + documentId +
-                ", departmentId=" + departmentId +
-                '}';
-    }
-
-    public FinanceDocument() {
+    public void showInfo() {
+        System.out.println("FinanceDocument: finalAmount= " + finalAmount + ", departmenId=" + departmentId + ", docId= " + getDocumentId() + ", dateOfDoc= " + getDateOfDocument());
+        super.showInfo();
     }
 }
