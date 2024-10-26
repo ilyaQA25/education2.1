@@ -14,7 +14,7 @@ public class Main {
         employeeContract.showInfo();
         financeDocument.showInfo();
 
-        financeDocument.saveDoc(financeDocument);
+        financeDocument.saveDoc(financeDocument, goodsShipping);
 
     }
 }

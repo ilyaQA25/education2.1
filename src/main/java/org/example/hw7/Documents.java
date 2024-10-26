@@ -29,17 +29,17 @@ public class Documents implements Registr {
     public void showInfo() {
     }
 
-
     @Override
-    public Documents saveDoc(Documents documents) {
+    public void saveDoc() {
+        Documents documents;
+        documents = null;
         Documents[] docList;
         docList = new Documents[10];
         for (int i = 0; i < docList.length; i++) {
-            docList[i] = documents;
-            System.out.println(docList.toString());
+            docList[0] = documents;
+            if (docList.length > 10) {
+                System.out.println("wrong number of docs");
+            }
         }
-        return documents;
     }
-
-
 }
