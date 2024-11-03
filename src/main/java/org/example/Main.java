@@ -1,48 +1,50 @@
 package org.example;
 
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        //пример generic
-        // generic used for storage different type of date
-        //class Car created for reminder why we need getters,setters and cunstructors and how this is working
+        //map ключ-значение (например толковый словарь)
+        //ключем будет стринга имя фрукта, значение кол-во символов в названии фрукта
+        //порядок произвольный
+        Map<String,Integer> fruits2 = new HashMap<>();
+        fruits2.putIfAbsent("apple", 5);
 
-        Cell<String> stringCell = new Cell<>("dsf");
-        stringCell.getT();
-
-        Cell<Integer> stringCell2 = new Cell(4);
-        stringCell2.getT();
-
+        fruits2.put("apple", 4);
+        fruits2.put("peach", 5);
+        fruits2.put("pine", 3);
+        System.out.println(fruits2);
 
 
 
-/*
 
-        Car car = new Car(4,"wqerq");
-        Car car2 = new Car("lols");
-        car.getCarName();
-        car2.setWheels(6);
-*/
 
+
+
+
+        //set
+        // проядок произвольный, но можно юзать TreeSet для сортировки
+        Set<String> fruits1 = new HashSet<>();
+        fruits1.add("apple");
+        fruits1.add("cherry");
+        fruits1.add("peach");
+        fruits1.add("pineapple");
+        fruits1.add("apple");
+        System.out.println(fruits1);
+
+
+        //list
+        // базовый список
+
+        List<String> fruits = new ArrayList<>();
+        fruits.add("apple");
+        fruits.add("apple");
+        fruits.add("cherry");
+        fruits.add(1, "peach");
+        fruits.add("pineapple");
+        fruits.add("apple");
+        System.out.println(fruits);
     }
-    }
-class  Cell<T>{
-    public Cell(T t) {
-        this.t = t;
-    }
 
-    T t;
-
-    public T getT() {
-        return t;
-    }
-
-    public void setT(T t) {
-        this.t = t;
-    }
 }
