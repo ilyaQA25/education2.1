@@ -4,4 +4,5 @@
 .allure-results
 out
 /.idea/
-/allure-results/
+/.allure-results/
+
