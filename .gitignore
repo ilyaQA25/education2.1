@@ -1,5 +1,6 @@
 # IntellijIea files
 *.iml
 .idea
+.allure-results
 out
 /.idea/
