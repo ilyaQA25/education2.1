@@ -14,7 +14,7 @@ public class CalcTest extends BaseTest{
         System.out.println("calcTest started");
     }
 
-    @Test(testName = "fdgdsdf")
+    @Test(testName = "fdgаdsdf")
     public void testSum(){
         Assert.assertEquals(calc.sum(2,3), 5, "wrong sum");
     }
