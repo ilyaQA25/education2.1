@@ -18,6 +18,28 @@ public class CalcTest extends BaseTest{
     public void testSum(){
         Assert.assertEquals(calc.sum(2,3), 5, "wrong sum");
     }
+    @Test()
+    public void testDivInt() {
+        try {
+            Assert.assertEquals(calc.division(10, 0), 10, "wrong div");
+        } catch (ArithmeticException e) {
+            System.out.println("b == 0");
+        }
+    }
+
+    @Test(testName = "test for division to 0")
+    public void testDivToZero(){
+        try {
+            Assert.assertEquals(calc.division(21.0, 0), 7.0, "wrong div");
+        } catch (AssertionError error) {
+            System.out.println(error);
+        }
+    }
+
+    @Test(testName = "division")
+    public void testDiv(){
+        Assert.assertEquals(calc.division(8.0,0),2.0);
+    }
 
     @Test(description = "test with descript")
     public void testDescript(){
