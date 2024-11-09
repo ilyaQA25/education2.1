@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main suite">
+    <test name="Smoke test">
+        <classes>
+        <class name="FirstTest"/>
+        <class name="CalcTest"/>
+        </classes>
+</test>
+    <test name="Regress test">
+        <classes>
+            <class name="DependencyTest"/>
+            <class name="CalcTest"/>
+        </classes>
+</test>
+</suite>

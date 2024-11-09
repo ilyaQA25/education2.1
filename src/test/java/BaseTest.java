@@ -1,5 +1,7 @@
 import org.testng.annotations.*;
 
+
+@Listeners(Listner.class)
 public class BaseTest {
     protected Calc calc;
     int counter = 0;

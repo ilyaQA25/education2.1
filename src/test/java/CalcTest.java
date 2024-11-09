@@ -16,7 +16,7 @@ public class CalcTest extends BaseTest{
 
     @Test(testName = "fdgаdsdf")
     public void testSum(){
-        Assert.assertEquals(calc.sum(2,3), 5, "wrong sum");
+        Assert.assertEquals(calc.sum(2,4), 5, "wrong sum");
     }
     @Test()
     public void testDivInt() {
