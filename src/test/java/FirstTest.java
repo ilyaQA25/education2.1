@@ -1,9 +1,11 @@
-import org.testng.Assert;
+import core.SimpleDriver;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class FirstTest {
     @Test
-    public void FirstTest(){
-        Assert.assertTrue(true);
+    public void test(){
+        SimpleDriver simpleDriver = new SimpleDriver();
+        WebDriver driver = simpleDriver.getDriver();
     }
 }
