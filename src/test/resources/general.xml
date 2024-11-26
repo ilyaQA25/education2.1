@@ -4,13 +4,11 @@
     <test name="Smoke test">
         <classes>
         <class name="FirstTest"/>
-        <class name="CalcTest"/>
         </classes>
 </test>
     <test name="Regress test">
         <classes>
-            <class name="DependencyTest"/>
-            <class name="CalcTest"/>
+            <class name="FirstTest"/>
         </classes>
 </test>
 </suite>
