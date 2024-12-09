@@ -52,7 +52,7 @@ public class SauceDemo {
     }
 
     @Test
-    public void cssSelectorsTest() {
+    public void cssSelectorsTest() throws InterruptedException {
         driver.get(ReadProperties.getUrl());
 
         WebElement passw = driver.findElement(By.cssSelector("#password"));
@@ -60,7 +60,19 @@ public class SauceDemo {
         WebElement login = driver.findElement(By.cssSelector("[placeholder=Username]"));
         login.sendKeys("standard_user");
         WebElement buttton = driver.findElement(By.cssSelector(".submit-button.btn_action"));
+        Thread.sleep(3000);
         buttton.click();
+
+        Assert.assertTrue(driver.findElement(By.cssSelector("[data-test='header-container']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("[alt*='Bolt T-Shirt']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("[alt~='Bolt']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("[class^='p']")).isDisplayed());
+
+        //хз шо  с этим локатором, херово работает
+        Assert.assertTrue(driver.findElement(By.cssSelector("[class|='pricebar']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("[class$='ice']")).isDisplayed());
+
+
 
     }
 }
