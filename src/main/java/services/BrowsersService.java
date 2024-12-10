@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class BrowsersService {
     private WebDriver driver = null;
@@ -17,15 +18,16 @@ public class BrowsersService {
         switch (ReadProperties.browserName().toLowerCase()) {
             case "chrome":
                 DriverManagerType driverManagerType = DriverManagerType.CHROME;
-                WebDriverManager.getInstance(driverManagerType).clearDriverCache().setup();
+                //WebDriverManager.getInstance(driverManagerType).setup();
+                WebDriverManager.chromedriver().setup();
 
                 ChromeOptions chromeOptions = new ChromeOptions();
+                //chromeOptions.setHeadless(ReadProperties.isHeadless());
                 chromeOptions.addArguments("--disable-gpu");
-                chromeOptions.addArguments("--window-size=1920,1200");
+                //chromeOptions.addArguments("--window-size=1920,1200");
                 chromeOptions.addArguments("--ignore-certificate-errors");
                 chromeOptions.addArguments("--silent");
                 chromeOptions.addArguments("--start-maximized");
-                //chromeOptions.addArguments("--headless");
 
                 driver = new ChromeDriver(chromeOptions);
 
@@ -43,9 +45,12 @@ public class BrowsersService {
     }
 
     public WebDriver getDriver() {
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ReadProperties.timeout()));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ReadProperties.timeout()));
 
 
         return driver;

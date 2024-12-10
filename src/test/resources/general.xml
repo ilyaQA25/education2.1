@@ -3,12 +3,12 @@
 <suite name="Main suite">
     <test name="Smoke test">
         <classes>
-        <class name="FirstTest"/>
+        <class name="XPathSelectorsTest"/>
         </classes>
 </test>
     <test name="Regress test">
         <classes>
-            <class name="FirstTest"/>
+            <class name="LaminateTest"/>
         </classes>
 </test>
 </suite>
