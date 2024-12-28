@@ -12,7 +12,7 @@ public class DynamicControls extends BaseTest {
 
         WebElement removeCheckbox = waitsService.waitForElementClickable(By.xpath("//*[@onclick='swapCheckbox()']"));
 
-        //first part of the task; working fine
+        //first part of the task; working fine sdfsd
         action.click(removeCheckbox).perform();
         WebElement messageCheckboxAndInput = waitsService.waitForVisibilityLocatedBy(By.id("message"));
         messageCheckboxAndInput.isDisplayed();
